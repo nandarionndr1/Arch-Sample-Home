@@ -190,73 +190,66 @@
                                         <h1 style="font-size: 300%;  display: inline-block; "><b style="color:#ece8e8"> Archives</b></h1>
                                 
                                         <br>
-                                        <p>________</p> 
                                         
-                                        
-                                        <br><br>
-                                        <br><br>
-                                        <center>
-                                         <div class="buttonwrapper">
-                                            <input type="text"  id="markWeap" name="markWeap"  ng-model="markWeap" placeholder="Filter" style="display: inline;" />
-                                            <button style="display: inline;" disabled>Q</button>
-                                        </div>
-                                        </center>
-                                        <br><br>
-                                        <br><br>
-                                      
                                         
                                     </div>
                                 </div>
                         
                     </div>
                 <div class="verticalz">
-                    <!-- ng-repeat="x in thingsList | filter:markWeap" 
-                            <img src="asset/{{ x.link}}" width="150" height="150" style="padding: 0px; ">
-                            <p>{{ x.name }}</p>
-                    -->
-                            <div class="contentz" >
-                                <div ng-repeat="x in thingsList | filter:markWeap"  style="display: inline; overflow-x: scroll">
-                                    <div class="itemz">
-                                            <center>
-                                                <img id="imeg" src="asset/{{ x.link }}" width="250" height="250" style="padding: 10px; ">
-                                                <p>{{ x.name }}</p>
-                                                <p style="font-size: 20px">{{ x.desc }}</p>
-                                            </center>
-                                    </div>
+                  <div class="contentz" >
+                            <div style="display: inline; overflow-x: scroll">
+                                <div class="itemz">
+                                        <center id="holder">
+                                        </center>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </section>
             <section>
                 <div class="container" style="padding:10px">
                     <center>
-                        <h1 style="display: inline; color:#5e9bff ;text-shadow: 2px 3px #dadeee;"> Mark Apps </h1>
+                        <h1 style="display: inline; color:#5e9bff ;text-shadow: 2px 3px #dadeee;"> Follow <b style="font-size:75px">Arch</b> @</h1>
                     </center>
-                    <br><br>
-                    <hr>
-                    <center>
-                        <div class="messages"></div>
-                        <div class="turn"></div>
-                        <table>
-                          <tr>
-                            <td class="item1"></td>
-                            <td class="item2"></td>
-                            <td class="item3"></td>
-                          </tr>
-                          <tr>
-                            <td class="item4"></td>
-                            <td class="item5"></td>
-                            <td class="item6"></td>
-                          </tr>
-                          <tr>
-                            <td class="item7"></td>
-                            <td class="item8"></td>
-                            <td class="item9"></td>
-                          </tr>
-                        </table>
-                        <br /><input class="reset" type="button" value="NEW GAME" />    
+                    
+                    <div class="row">
+                        <hr>
+                        <center>
+                            <div class="col-md-3">
+                                    <p class="featured" style="word-wrap: break-word;white-space: normal;font-size: 18px;text-shadow: none">
+                                        facebook 
+                                        </p> 
+                                        <i class="fa fa-facebook-official" style="font-size:45px;color:blue"></i>
+                                        
+                                        <a href="https://www.facebook.com/ArchersNetwork">https://www.facebook.com/ArchersNetwork</a>
+                            </div>
 
-                </center>
+                            <div class="col-md-3">
+                                    <p class="featured" style="word-wrap: break-word;white-space: normal;font-size: 18px;text-shadow: none">
+                                            twitter</p> 
+                                        <i class="fa fa-twitter-square" style="font-size:45px;color:skyblue"></i><br>
+                                        <a href="https://twitter.com/ArchersNetwork">https://twitter.com/ArchersNetwork</a>
+                            </div>
+
+                            <div class="col-md-3">
+                                    <p class="featured" style="word-wrap: break-word;white-space: normal;font-size: 18px;text-shadow: none">
+                                            instagram
+                                        </p> 
+                                        <i class="fa fa-instagram" style="font-size:45px; color:deeppink"></i>
+                                        <a href="https://www.instagram.com/ArchersNetwork/">https://www.instagram.com/ArchersNetwork/</a>
+                            </div>
+
+                            <div class="col-md-3">
+                                    <p class="featured" style="word-wrap: break-word;white-space: normal;font-size: 18px;text-shadow: none">
+                                        youtube
+                                        </p> 
+                                        <i class="fa fa-youtube-square" style="font-size:45px;color:red"></i>
+                                        <a href="https://www.youtube.com/channel/UCQgQ-KGhqAcm0Bjf8UdcxMA/feed">https://www.youtube.com/channel/UCQgQ-KGhqAcm0Bjf8UdcxMA/</a>
+                            </div>
+                        </center>
+                    </div>
+                    
                 </div>
 	       </section>
 
@@ -265,7 +258,7 @@
         <div class="footer" id="pt">
             <div class="hr"></div>
             <br><br>
-            <center><p>AW AW AW AW AW AW AW AW AW AW AW AW </p></center>
+            <center><p>by <a href="#" onclick="Open();" style="color:yellow"> Mark Barraquias </a></p></center>
             
             
             
@@ -283,21 +276,26 @@
     var app = angular.module('myEtits', []);
 
     app.controller('tite', function($scope) {
-    $scope.thingsList = [{name:'Angular.js', link:'angular.png',desc:'ANGULAR IS BAE'},
-                         {name:'D3.js', link:'d3.png',desc: 'Chart making thingy'},
-                         {name:'JSP', link:'jsp.png', desc: 'Ew Java :('},
-                         {name:'Firebase', link:'firebase.png', desc:'NOSql online database'},
-                         {name:'Android', link:'adnroid.png', desc:'Create Android.'},
-                         {name:'Django', link:'django.png', desc:'DJANGO is BAE :(( Backend boii'},
-                         {name:'JQuery', link:'jquery.png',desc:'Jekweri'},
-                         {name:'Python', link:'python.png', desc:'PytH0n is Baee'},
-                         {name:'PHP', link:'php.png', desc:'Rasmus Lerdorf sucks'},
-                         {name:'AJAX', link:'ajax.png', desc:'EJACCx'},
-                         {name:'HTML', link:'html.png',desc:'weeew'}];
+    
 
     $scope.things = [
            
     ];
+
+    $.ajax({ url: 'https://www.googleapis.com/youtube/v3/activities?part=snippet,contentDetails&channelId=UCQgQ-KGhqAcm0Bjf8UdcxMA&key=AIzaSyAbxPrSLwGHV9gFudHc5NiBHaO54gBxrXg',
+        type: 'GET', 
+        data: { code: "wew" },
+        success: function(data) {
+            console.log(data.items.length);
+            console.log(data);
+            $scope.thingsList = [];
+            for (var i = 0; i < data.items.length; i++){  
+                var obj = data.items[i];
+                console.log(obj.contentDetails.upload.videoId);
+                $('#holder').append('<iframe src="https://www.youtube.com/embed/'+obj.contentDetails.upload.videoId+'"width="450" frameBorder="0" style="margin-left:5px;margin-right:5px;" height="345"></iframe>')
+            }
+        }
+    })
 });
 $(document).ready(function() {
     
