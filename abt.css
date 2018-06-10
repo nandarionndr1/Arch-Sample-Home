@@ -11,88 +11,46 @@
     div{
         display: block
     }
-    html *
-    {
-        -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    box-sizing: border-box;
-    } 
-    .button2 {
-        background-color: rgba(255, 255, 255, 0);
-        color: rgb(153, 153, 255);
-        margin: 10px;
-        padding: 5px;
-        height: auto;
-        width: auto;
-        border-radius: 5px;
-        -webkit-transition-duration: 0.4s; /* Safari */
-        transition-duration: 0.4s;
-    }
-    .button2:hover {
-        background-color: #555555;
-        color: white;
-    }
-    .button1 {
-        background-color: white;
-        color: rgb(153, 153, 255);
-        margin: 20px;
-        padding: 10px;
-        height: auto;
-        width: auto;
-        border-radius: 5px;
-        border: 1px solid #555555; /* Green */
-        -webkit-transition-duration: 0.4s; /* Safari */
-        transition-duration: 0.4s;
-    }
-    .button1:hover {
-        background-color: #555555;
-        color: white;
-    }
-    .hr_sched {
-        display: block;
-        margin-top:0.5px;
-        margin-bottom: 1px;
-        border: 0;
-        border-top: 1px solid rgba(214, 190, 190, 0.952);
-        padding: 0; 
-    }
-    .vr{
-        border-left:1px solid rgba(214, 190, 190, 0.952);
-        height:50px;
-        float: left;
-        margin-right:10px;
-        margin-top:10px;
-        margin-bottom:10px;
-    }
-    .bg{
-        background-image: url("arch_bg.jpg");
-
-        /* Full height */
-        height: 100%; 
-
-        /* Center and scale the image nicely */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    .overlay_pic{
+    .arrow:after {
+        border-top: 80px solid #ffffff;
+        border-left: 60px solid transparent; 
+        border-right: 60px solid transparent; 
+        bottom: 0px;
         position: absolute;
-        content:" ";
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        display: block;
-        z-index:0;
-        background:linear-gradient(to top, rgba(0, 0, 0, 0.753), rgba(27, 27, 27, 0));
-      }
+        left: 45%;
+        margin-left: -10px;
+        width: 0; 
+        height: 0;
+    }
+    .triangle {
+        width: 0px;
+    height: 0px;
+        display:inline;
+    border-style: solid;
+    border-width: 46px 0 46px 46px;
+    border-color: transparent transparent transparent #ffffff;
+    position:absolute;
+    }
     p.normal {
         font-size: 150%;
         font-family: arial;
         text-shadow: 0;
         font-weight: normal;
+    }
+    .vr{
+        border-left:5px dotted rgba(45, 110, 45, 0.952);
+        height:60%;
+        float: left;
+        margin-right:10px;
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    p.normal-overlay {
+        font-size: 500%;
+        font-family: arial;
+        color: #05380d;
+        text-shadow: 2px 5px #3dff5a;
+        font-weight: bold;
     }
     p.normal-small-txt {
         display: inline;
@@ -133,18 +91,34 @@
         text-shadow: 0;
         font-weight: 900;
     }
+
     .bg2{
-
-        
-        background-image: url("banner_motd.png");
-
+        background-image: url("origin.png");
         /* Full height */
-        height: 75%; 
-
+        height: 50%; 
         /* Center and scale the image nicely */
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+    }
+    .overlay_pic{
+        position: absolute;
+        content:" ";
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        display: block;
+        z-index:0;
+        background:linear-gradient(to top, rgba(0, 0, 0, 0.753), rgba(27, 27, 27, 0));
+      }
+    html *
+    {
+        -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     }
     .template {
         background: #404a59;
@@ -155,10 +129,10 @@
         top: 0;
         left: 0;
         right: 0;
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+        
         z-index: 50;
         padding: 10px;
-        background:linear-gradient(to left, rgba(0, 0, 0, 0.774), rgba(27, 27, 27, 0.774));
+        background:rgba(0,0,0,.50);
     }
 .verticalz{
     overflow: hidden;
@@ -178,7 +152,7 @@
 }
     .view {
         position: relative;
-        padding-top: 50px;
+        padding-top: 110px;
         z-index: 1;
         min-height: 400px;
         background: #404a59;
@@ -202,10 +176,10 @@
         font-size: 400%;
         font-family: 'Product Sans';
     }
-    .view section p default {
+    .view section p {
         font-size: 200%;
         font-family: 'Product Sans';
-        text-shadow: 3px 1px #464746;  
+        
     }
     .view section b {
         font-size: 200%;
@@ -225,7 +199,7 @@
     }
 
     .view section.black-trans {
-        background: rgba(0,0,0,0);
+        background: rgba(0,0,0,.50);
         transition:background-color 1.4s ease;
     }
     .view section.black-trans2 {
@@ -329,7 +303,7 @@
         font-family: 'Product Sans';
         color: rgb(102, 192, 17);
         vertical-align: bottom;
-        line-height: 20px;
+        line-height: 90px;
         font-size: 18px;
         margin: 0;
         padding: 0;
@@ -414,7 +388,15 @@ input{
   height: 50px;
 }
 
-
+button {
+  margin-left: -100%;
+  border: 2px solid white;
+  background-color: transparent;
+  height: 51px;
+  width: 40px;
+    
+    
+}
 /* footer */
 .footer {
     padding-bottom: 50px;
@@ -627,7 +609,7 @@ progress::-webkit-progress-bar {
 .featured {
     font-size: 10px;
     white-space: nowrap;
-    color: #404040;
+    color: black;
     text-shadow: 2px 3px #dadfe8;
 }
 .progress-bar {
